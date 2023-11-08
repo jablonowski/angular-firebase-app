@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { UserService } from "./service/user.service";
+import { AuthTokenService } from "./service/auth-token.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-firebase-app';
+
+  constructor(
+    public user: UserService,
+    private token: AuthTokenService) {
+
+  }
+
+  ngOnInit() {
+
+  }
+
+  logout() {
+    this.user.logout();
+  }
 }

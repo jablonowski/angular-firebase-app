@@ -1,0 +1,39 @@
+
+
+<div class="books-panel">
+
+  <div class="header">
+
+      <h2 class="title">All Books</h2>
+
+      <ng-container *ngIf="(user.roles$ | async) as roles">
+
+        <ng-container *ngIf="roles.admin">
+
+              <button mat-mini-fab color="accent" routerLink="/create-book">
+                  <mat-icon class="add-book-btn">add</mat-icon>
+              </button>
+
+          </ng-container>
+
+      </ng-container>
+
+
+
+  </div>
+
+  <mat-tab-group>
+
+      <mat-tab>
+
+          <app-books-card-list [books]="allBooks$ | async"
+              (bookEdited)="reloadBooks()"
+              (bookDeleted)="reloadBooks()">
+          </app-books-card-list>
+
+      </mat-tab>
+
+
+  </mat-tab-group>
+
+</div>

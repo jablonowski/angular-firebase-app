@@ -1,0 +1,35 @@
+<div class="create-book">
+
+  <h3>Create New Book</h3>
+
+  <form [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Title" matInput formControlName="title">
+
+    </mat-form-field>
+
+    <div >
+
+      <input placeholder="Author" matInput formControlName="author">
+
+    </div>
+
+
+
+    <mat-form-field appearance="outline">
+
+      <textarea matInput placeholder="Description"
+                formControlName="description"></textarea>
+
+    </mat-form-field>
+
+    <button mat-raised-button color="warn" [disabled]="!form.valid"
+        (click)="onCreateBook()">
+      Create Book
+    </button>
+
+  </form>
+
+</div>

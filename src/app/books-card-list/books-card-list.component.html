@@ -1,0 +1,39 @@
+<mat-card *ngFor="let book of books" class="book-card mat-elevation-z10">
+
+  <mat-card-header>
+
+    <mat-card-title>{{book.title}}</mat-card-title>
+    <p>{{book.author}}</p>
+  </mat-card-header>
+
+ 
+
+  <mat-card-content>
+    <p>{{book.description}}</p>
+  </mat-card-content>
+
+  <mat-card-actions class="book-actions">
+
+    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/books', book.id]">
+      VIEW BOOK
+    </button>
+
+    <ng-container *ngIf="(user.roles$ | async) as roles">
+
+        <ng-container *ngIf="roles.admin">
+
+            <button mat-button class="mat-raised-button mat-accent"
+                    (click)="editBook(book)">
+                EDIT
+            </button>
+            <button mat-mini-fab color="warn" (click)="onDeleteBook(book)">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </ng-container>
+
+    </ng-container>
+
+  </mat-card-actions>
+
+</mat-card>
