@@ -12,7 +12,6 @@ import { BookComponent } from './book/book.component';
 import { BooksCardListComponent } from './books-card-list/books-card-list.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { EditBookDialogComponent } from './edit-book-dialog/edit-book-dialog.component';
-import { CreateUserComponent } from './create-user/create-user.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -44,8 +43,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     BookComponent,
     BooksCardListComponent,
     CreateBookComponent,
-    EditBookDialogComponent,
-    CreateUserComponent
+    EditBookDialogComponent
   ],
   imports: [
     BrowserModule,

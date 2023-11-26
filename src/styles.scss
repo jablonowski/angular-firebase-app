@@ -3,3 +3,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1.5fr 0.4fr;
+  grid-template-areas:
+    "navbar"
+    "main"
+    "footer";
+  gap: 20px;
+  height: 100%;
+}

@@ -14,11 +14,13 @@ main {
 
 .toolbar-tools {
   display: flex;
+  align-items: center;
   width: 100%;
 }
 
 
-.filler {
+.menu {
   flex: 1 1 auto;
   width: 100%;
+  align-items: center;
 }

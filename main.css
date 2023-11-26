@@ -1,0 +1,93 @@
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1fr 1fr 0.8fr;
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "sidebar main main main"
+    "sidebar section1 section2 section3"
+    "sidebar section4 section4 section4"
+    "footer footer footer footer";
+  gap: 20px;
+  height: 100%;
+}
+
+nav {
+  grid-area: navbar;
+  padding: 20px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+
+}
+
+main {
+  grid-area: main;
+  background-color: blueviolet;
+  padding: 20px;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background-color: brown;
+}
+
+#section1 {
+  grid-area: section1;
+  padding: 20px;
+  background-color: cadetblue;
+}
+
+
+#section2 {
+  grid-area: section2;
+  background-color: yellow;
+  padding: 20px;
+}
+
+
+#section3 {
+  grid-area: section3;
+  background-color: violet;
+  padding: 20px;
+}
+
+
+#section4 {
+  grid-area: section4;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: tomato;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "sidebar"
+      "main"
+      "section1"
+      "section2"
+      "section3"
+      "section4"
+      "footer";
+  }
+}
